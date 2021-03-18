@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import HogCard from './HogCard'
 
 const hogs = ['Babe', 
@@ -14,14 +14,21 @@ const hogs = ['Babe',
 'Leggo My Eggo', 
 'Augustus Gloop'
 ];
-function HogCardList(){
-    const hogcardlist = hogs.map((hog) => {
-        return <HogCard key = {hog} name = {hog} />;
+function HogCardList(props){
+    const [hogs, setHogs] = useState(props.hogs)
+    
+
+    const hogCardList = hogs.map((hog) => {
+        return <HogCard 
+        key ={hog.name} 
+        name={hog.name} 
+        specialty={hog.specialty}
+         />;
     });
     return(
         <>
         <h1> hogslist </h1>
-        {hogcardlist}
+        {hogCardList}
         </>
     );
 }

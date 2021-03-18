@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react'
 
-
-
-
-
-function HogCard({hog}) {
-    const{name} = hog;
-    return (<h2>{name}</h2>)
+const HogCard = ({name}) => {
+    return (
+        <div>
+            {name}
+        </div>
+    )
 }
 
-export default HogCard;
+export default HogCard
+
